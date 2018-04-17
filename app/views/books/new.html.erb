@@ -1,0 +1,43 @@
+<!-- <form action="/books" method="post" accept-charset="utf-8">
+
+  SPECIAL INPUT TO ALLOW RAILS TO USE THIS FORM
+  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+
+
+  <label for="my_title">Title</label>
+
+  <input type="text" name="my_title" value="" id="my_title">
+
+  <label for="author">Author</label>
+  <input type="text" name="author" value="" id="author">
+
+  <input type="submit" value="Create Book">
+
+</form>
+
+ -->
+
+
+ <!-- <%= form_for @book do |f| %>
+
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :author, "Auuttthhhoorr" %>
+  <%= f.text_field :author %>
+
+  <%= f.label :publication_year %>
+  <%= f.date_field :publication_year %>
+
+  <%= f.label :synopsis %>
+  <%= f.text_area :synopsis %>
+
+  <%= f.submit "Shelve it!" %>
+ <% end %> -->
+
+
+
+<!-- <%= render "shared/partials" %> -->
+
+<!-- <%= render partial: "shared/partials", locals: { action_name: "Create a new book" } %> -->
+<%= render partial: "shared/partials", locals: { page_title: "New book" } %>

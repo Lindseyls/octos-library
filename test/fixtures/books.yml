@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  author: MyString
+poodr:
+  title: Practical Object-Oriented Design in Ruby
+  author: metz
 
-two:
-  title: MyString
-  author: MyString
+# don't define too with the same name
+# rails will do some magic and it will run
+# but this is WRONG!

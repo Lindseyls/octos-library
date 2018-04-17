@@ -1,0 +1,10 @@
+<%= form_for @author, url: login_path do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+
+  <%= f.submit "login" %>
+
+<% end %>
+
+<%# form_tag %>

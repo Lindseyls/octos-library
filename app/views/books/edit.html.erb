@@ -1,0 +1,22 @@
+<!-- <%= form_for @book do |f| %>
+
+ <%= f.label :title %>
+ <%= f.text_field :title %>
+
+ <%= f.label :author %>
+ <%= f.text_field :author %>
+
+ <%= f.label :publication_year %>
+ <%= f.date_field :publication_year %>
+
+ <%= f.label :synopsis %>
+ <%= f.text_area :synopsis %>
+
+ <%= f.submit "Shelve it!" %>
+<% end %> -->
+
+
+<!-- <%= render "shared/partials" %> -->
+
+<%= render partial: "shared/partials", locals: { action_name: "Edit me!" } %>
+<!-- <%= render partial: "shared/partials", locals: { page_title: "Edit book" } %> -->

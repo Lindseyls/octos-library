@@ -1,12 +1,32 @@
-<h2>Welcome to the Octos Library!</h2>
+<!-- <h2>Welcome to the Octos Library!</h2> -->
 
 <p>We have many books sitting around for your reading pleasure</p>
 
 <ul>
 <% @books.each do |book| %>
   <li>
-    <strong><%= book[:title] %></strong>
-     By: <%= book[:author] %>
+    <strong><%= link_to(book.title, book_path(book)) %></strong>
+     By: <%= book.author ? book.author.name : "<unknown>" %>
+     <!-- <a href="/books/#{book.id}">Go to it now!</a> -->
+     <!-- <%= link_to("Go to the book", book_path(book)) %> -->
+
+    <%= link_to("Edit", edit_book_path(book)) %>
+    <%= link_to("Delete", book_path(book.id), method: :delete, data: { confirm: "Are you sure?" }) %>
+
+    <%= link_to("Go find it on google", "http://www.google.com/search?g=#{book.title}")%>
   </li>
 <% end %>
 </ul>
+
+
+<!-- <a href="/books/new" class="Something important">Add a New Book</a> -->
+<%= link_to("Add a New Book", new_book_path, class: "hollow button") %>
+
+
+<!-- the below creates a button and the button goes to the form page -->
+<!-- <div>
+  <em>you can submit more books here</em>
+  <form action="/books/new" method="get">
+     <input type="submit" value="Create Book">
+  </form>
+</div> -->

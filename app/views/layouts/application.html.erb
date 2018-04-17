@@ -1,21 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>OctosLibrary</title>
-    <%= csrf_meta_tags %>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <title><%= content_for?(:title) ? yield(:title) : "Octos Library" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
     <header>
-      <h1>Welcome to the Octos Library</h1>
+      <h1>
+      <!-- below is how we add an image -->
+        <%= image_tag "books-icon.png", alt: "Site logo", class: "logo" %>
+        Welcome to the Octos Library
+      </h1>
       <nav>
+
+        <ul>
+          <li>
+          <%= link_to("All books", books_path, class: "hollow button") %>
+          </li>
+          <li>
+          <%= link_to "New book", new_book_path, class: "hollow button" %>
+          </li>
+          <li>
+          <%= link_to "All authors", authors_path, class: "hollow button" %>
+          </li>
+          <li>
+          <%= link_to "New author", new_author_path, class: "hollow button" %>
+          </li>
+
+          <li>
+            <% if session[:author_id] %>
+              <%= link_to "Logout", logout_path, method: :delete, class: "hollow button" %>
+            <% else %>
+              <%= link_to "Login", login_path, class: "hollow button" %>
+            <% end %>
+          </li>
+        </ul>
+
       </nav>
     </header>
 
+
     <main>
+      <section class="flash">
+        <% flash.each do |name, message| %>
+        <div class="<%= name %>"><%= message %></div>
+        <% end %>
+      </section>
+
       <%= yield %>
     </main>
 
@@ -23,4 +61,4 @@
       <p>&copy; Ada Developers Academy, 2018</p>
     </footer>
   </body>
-</html>
+  </html>

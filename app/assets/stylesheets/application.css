@@ -10,10 +10,51 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require foundation_and_overrides
  *= require_tree .
  *= require_self
+
  */
+
+nav .hollow.button {
+  color: violet;
+}
 
  header h1 {
    background-color: lightskyblue;
+ }
+
+ header img.logo {
+   height: 1em;
+   float: left;
+ }
+
+ header nav {
+   clear: left
+ }
+
+ header nav li {
+   display: inline-block;
+ }
+
+ header nav ul {
+   list-style-type: none;
+   padding: 0;
+   margin: 2em 0;
+ }
+
+ /*
+ header nav li a {
+   padding: 1em;
+   border: solid 1px black;
+   text-decoration: none;
+ } */
+
+ a {
+   color: purple;
+
+ }
+
+ .error-messages {
+   color: red;
  }
